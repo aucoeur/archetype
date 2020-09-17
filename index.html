@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu+Mono&Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu+Mono&Source+Sans+Pro&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>archetype - a CSS framework</title>
 </head>
@@ -13,7 +14,7 @@
     <div class="navbar">
         <ul>
             <li>
-                <h1 class="title">archetype</h1>
+                <h3 class="title">archetype</h3>
             </li>
             <li><a href="#colors">Colors</a></li>
             <li><a href="#navbar">Navbar</a></li>
@@ -47,14 +48,13 @@
 
             <pre>
 				<code>
-&lt;h1&gt;Headings&lt;/h1&gt;
-&lt;h1&gt;H1 Heading&lt;/h1&gt;
-&lt;h2&gt;H2 Heading&lt;/h2&gt;
-&lt;h3&gt;H3 Heading&lt;/h3&gt;
-&lt;h4&gt;H4 Heading&lt;/h4&gt;
-&lt;h5&gt;H5 Heading&lt;/h5&gt;
-&lt;h6&gt;H6 Heading&lt;/h6&gt;
-				</code>
+    &lt;h1&gt;Headings&lt;/h1&gt;
+    &lt;h1&gt;H1 Heading&lt;/h1&gt;
+    &lt;h2&gt;H2 Heading&lt;/h2&gt;
+    &lt;h3&gt;H3 Heading&lt;/h3&gt;
+    &lt;h4&gt;H4 Heading&lt;/h4&gt;
+    &lt;h5&gt;H5 Heading&lt;/h5&gt;
+    &lt;h6&gt;H6 Heading&lt;/h6&gt;</code>
 			</pre>
         </section>
 
@@ -69,8 +69,8 @@
 
             <pre>
 				<code>
-&lt;p&gt;This is an &lt;strong&gt;average&lt;/strong&gt; paragraph. It includes some &lt;em&gt;inline&lt;/em&gt; elements such as &lt;strong&gt; and &lt;em&gt;.&lt;/p&gt;
-				</code>
+    &lt;p&gt;This is an &lt;strong&gt;average&lt;/strong&gt; paragraph. It includes some 
+    &lt;em&gt;inline&lt;/em&gt; elements such as &lt;strong&gt; and &lt;em&gt;.&lt;/p&gt;</code>
 			</pre>
         </section>
 
@@ -83,8 +83,7 @@
 
             <pre>
 				<code>
-&lt;button&gt;Submit&lt;/button&gt;
-				</code>
+    &lt;button&gt;Submit&lt;/button&gt;</code>
 			</pre>
 
             <p>This button has consequences. You might want to think twice before clicking.</p>
@@ -96,15 +95,10 @@
 
             <pre>
 				<code>
-&lt;button 
-	style=&quot;--weight: bold; 
-	--background-color: #f85353;&quot;
-&gt;Delete&lt;/button&gt;
+    &lt;button style=&quot;--weight: bold; 
+	           --background-color: #f85353;&quot;&gt;Delete&lt;/button&gt;
 
-&lt;button 
-	style=&quot;--background-color: #6bc253;&quot;
-&gt;Go!&lt;/button&gt;
-				</code>
+    &lt;button style=&quot;--background-color: #6bc253;&quot;&gt;Go!&lt;/button&gt;</code>
 			</pre>
         </section>
 
@@ -154,6 +148,41 @@
                 </label>
             </form>
         </section>
+        <section>
+            <h3>Checkboxes </h3>
+            <label class="arche-checkbox">
+                <input type="checkbox">
+                <span>Pickles?</span>
+            </label>
+
+            <label class="arche-radio">
+                <input type="radio" name="choice" checked>
+                <span>Converse</span>
+            </label>
+
+            <label class="arche-radio">
+                <input type="radio" name="choice">
+                <span>Vans</span>
+            </label>
+        </section>
+
+        <section><pre><code>
+    &lt;label&gt;
+    &lt;input type=&quot;checkbox&quot;&gt;
+    Pickles?
+    &lt;/label&gt;
+
+    &lt;label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;choice&quot; checked&gt;
+    Converse
+    &lt;/label&gt;
+
+    &lt;label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;choice&quot;&gt;
+    Vans
+    &lt;/label&gt;        
+    </code></pre>
+        </section>
 
 
 
@@ -194,7 +223,7 @@
             <div class="navbar">
                 <ul>
                     <li>
-                        <h1 class="title">TITLE</h1>
+                        <h3 class="title">title</h3>
                     </li>
                     <li><a href="#">Link 1</a></li>
                     <li><a href="#">Link 2</a></li>
@@ -204,24 +233,19 @@
             </div>
 
             <div>
-                <pre class="code-block">
-					<code>
+                <pre class="code-block"><code>
 &lt;div class=&quot;navbar&quot;&gt;
-	&lt;ul&gt;
-		&lt;li&gt;&lt;h1 class=&quot;title&quot;&gt;TITLE&lt;/h1&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/div&gt;
-					</code>
+  &lt;ul&gt;
+    &lt;li&gt;&lt;h1 class=&quot;title&quot;&gt;TITLE&lt;/h1&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code>
 				</pre>
             </div>
-
         </section>
-
-
 
         <section id="footers">
             <h2>Page Footer</h2>
@@ -230,27 +254,27 @@
                     <li>
                         <h3>Column 1</h3>
                     </li>
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
-                    <li><a>Item 3</a></li>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
                 </ul>
 
                 <ul>
                     <li>
                         <h3>Column 2</h3>
                     </li>
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
-                    <li><a>Item 3</a></li>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
                 </ul>
 
                 <ul>
                     <li>
                         <h3>Column 3</h3>
                     </li>
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
-                    <li><a>Item 3</a></li>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
                 </ul>
             </div>
         </section>

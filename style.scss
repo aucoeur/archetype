@@ -1,4 +1,5 @@
 $padding: 0.25em;
+$padding-fixed: 5px;
 $font-size: 20px;
 
 :root {
@@ -7,12 +8,12 @@ $font-size: 20px;
     --monotype: "Ubuntu Mono";
     --font-size: $font-size;
     --line-height: 1.2em;
-    --color-light: rgb(251, 241, 252);
-    --color-bg: rgb(18, 53, 91);
-    --color-dark: rgb(10, 31, 53);
-    --color-accent: rgb(143, 219, 0);
-    --color-primary: rgb(56, 163, 165);
-    --color-secondary: rgb(175, 79, 0);
+    --color-light: rgb(236, 236, 226);
+    --color-bg: rgb(236, 236, 226);
+    --color-dark: rgb(35, 51, 49);
+    --color-accent: rgb(139, 214, 41);
+    --color-primary: rgb(0, 192, 192);
+    --color-secondary: rgb(65, 83, 88);
     --padding: $padding;
 }
 
@@ -21,7 +22,7 @@ body {
     font-size: var(--font-size);
     line-height: var(--line-height);
     background-color: var(--color-bg);
-    color: var(--color-light);
+    color: var(--color-secondary);
     margin: 0;
 }
 
@@ -31,26 +32,53 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--color-accent);
+    color: var(--color-dark);
     font-family: var(--caps);
-    letter-spacing: $padding;
-    padding: $padding;
+    // letter-spacing: $padding;
+    padding: $padding-fixed * 1.5;
     font-weight: normal;
+    margin: 0.5em 0;
 }
+
+h1 {
+    font-size: $font-size * 2.5;
+}
+
+h2 {
+    font-size: $font-size * 2.25;
+}
+
+h3 {
+    font-size: $font-size * 2;
+}
+
+h4 {
+    font-size: $font-size * 1.75;
+}
+
+h5 {
+    font-size: $font-size * 1.5;
+}
+
+h6 {
+    font-size: $font-size * 1.25;
+}
+
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     background-color: var(--color-dark);
-    padding: 0 $padding * 2 0;
+    padding: 0 $padding * 2;
+    margin: 0;
     font-size: $font-size * .75;
 
     & .title {
-        padding: 0;
-        font-family: var(--caps);
-        letter-spacing: $padding;
-        color: var(--color-primary);
+        padding: 0 $padding * 2 0 0;
+        font-family: var(--sans-serif);
+        letter-spacing: $padding * .5;
+        color: var(--color-light);
     }
 
     &>ul, ul {
@@ -70,18 +98,18 @@ h6 {
             &>a {
                 display: block;
                 padding: $padding * 2 $padding * 2;
-                color: var(--color-secondary);
+                color: var(--color-light);
                 text-decoration: none;
             }
 
             & a:hover {
-                color: var(--color-accent);
+                color: var(--color-primary);
                 border-bottom: 2px solid var(--color-primary);
             }
 
             & a:active {
-                background-color: var(--color-info);
-                color: var(--color-light);
+                background-color: var(--color-bg);
+                color: var(--color-accent);
                 filter: none;
             }
 
@@ -101,22 +129,118 @@ h6 {
                 visibility: visible;
                 opacity: 1;
                 display: block;
-                background-color: var(--nav-dark);
+                background-color: var(--color-dark);
             }
         }
     }
 
     &h1 {
         color: var(--color-light);
-        margin: $padding;
+        margin: 0;
         font-size: 1.5em;
         font-weight: normal;
     }
 
 }
 
-pre, code {
+pre {
     font-family: var(--monotype);
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+    padding: 0 $padding * 2 $padding;
+    margin: $padding * 2 $padding * 10;
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word; 
+    border-radius: $padding-fixed * 2;
+}
+
+code {
+    font-family: var(--monotype);
+    color: var(--color-primary);
+} 
+
+p {
+    padding: 0 $padding * 2.5;
+}
+
+section:not(>.navbar) {
+    padding: 0 $padding * 2.5;
+}
+
+/* checkbox button base element */
+.arche-checkbox > span {
+    display: inline-block;
+    // background-color: lightgray;
+  font-size: $font-size * 1.5;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+/* Selected "checkmark" styles */
+.arche-checkbox > input[type=checkbox] + span::before {
+   display: block;
+   opacity: 0;
+   content: '';
+   width: 10px;
+   height: 20px;
+   border-right: 5px solid var(--color-primary);
+   border-bottom: 5px solid var(--color-primary);
+   transform: rotate(45deg);
+   position: absolute;
+   left: 5px;
+   top: -6px;
+   transition: 400ms;
+}
+/* Selected "mark" styles */
+.arche-checkbox > input[type=checkbox]:checked + span::before {
+    opacity: 1;
+}
+/* Outline */
+.arche-checkbox > input[type=checkbox] + span::after {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Hide the input */
+.arche-checkbox input {
+    visibility: hidden;
+}
+
+button {
+    color: var(--color-light);
+    border: 2px solid var(--color-secondary);
+    padding: $padding * 3;
+    border-radius: $padding-fixed;
+    font-family: var(--sans-serif);
+    font-size: var(--font-size);
+    background-color: var(--color-secondary);
+}
+
+button:hover {
+    border: 2px solid var(--color-secondary);
+    color: var(--color-primary);
+}
+
+div {
+    margin: $padding-fixed * 3 0;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
     color: var(--color-dark);
-    background-color: var(--color-light);
+    text-decoration: none;
 }
