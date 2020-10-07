@@ -87,18 +87,13 @@
 			</pre>
 
             <p>This button has consequences. You might want to think twice before clicking.</p>
-            <p>Custimize buttons by adding CSS variables inline or with a class.</p>
             <p>
-                <button style="--weight: bold; --background-color: #f85353;">Delete</button>
-                <button style="--background-color: #6bc253;">Go!</button>
+                <button class="danger">Delete</button>
             </p>
 
             <pre>
 				<code>
-    &lt;button style=&quot;--weight: bold; 
-	           --background-color: #f85353;&quot;&gt;Delete&lt;/button&gt;
-
-    &lt;button style=&quot;--background-color: #6bc253;&quot;&gt;Go!&lt;/button&gt;</code>
+    &lt;button class=&quot;danger&quot;&gt;Delete&lt;/button&gt;</code>
 			</pre>
         </section>
 
@@ -111,50 +106,62 @@
         <section>
             <h2>Forms and controls</h2>
             <form>
-                <label>
-                    <span>Text:</span>
-                    <input type="text" placeholder="What is your name?">
-                </label>
-
-                <label>
-                    <span>Email:</span>
-                    <input type="email" placeholder="What is your name?">
-                </label>
+                <div>
+                    <label>
+                        <span>Text:</span>
+                        <input type="text" placeholder="What is your name?">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <span>Email:</span>
+                        <input type="email" placeholder="What is your name?">
+                    </label>
+                </div>
+                <div>
 
                 <label>
                     <span>Password:</span>
                     <input type="password" placeholder="What is your name?">
                 </label>
+                </div>
+<div>
 
                 <label>
                     <span>Your comments</span>
                     <textarea placeholder="Your comment"></textarea>
                 </label>
+</div>
 
-                <!-- Switch with Click -->
-                <div>
-                    <label id="switch-2" class="switch-2">
-                        <input type="checkbox">
-                        <div>
-                            <div></div>
-                        </div>
-                    </label>
-                    <span>Click Switch no JS</span>
-                </div>
-
-                <label class="control-checkbox">One
-                    <input type="checkbox" checked="checked">
-                    <span></span>
-                </label>
             </form>
         </section>
         <section>
-            <h3>Checkboxes </h3>
-            <label class="arche-checkbox">
-                <input type="checkbox">
-                <span>Pickles?</span>
-            </label>
-
+            <!-- Switch with Click -->
+            <h3> Switch with Click</h3>
+            <div class="inner">
+                <label class="arche-switch">
+                    <input type="checkbox" checked>
+                    <span class="arche-slider"></span>
+                </label>
+                <pre><code>
+    &lt;label class="arche-switch"&gt;
+        &lt;input type="checkbox" checked&gt;
+        &lt;span class="arche-slider"&gt;&lt;/span&gt;
+    &lt;/label&gt;
+    </code></pre>
+            </div>
+            <h3>Checkbox / Radio </h3>
+            <div>
+                <label class="arche-checkbox">
+                    <input type="checkbox">
+                    <span>Pickles?</span>
+                </label>
+                <label class="arche-checkbox">
+                    <input type="checkbox" checked>
+                    <span>One</span>
+                </label>
+            </div>
+            <div></div>
             <label class="arche-radio">
                 <input type="radio" name="choice" checked>
                 <span>Converse</span>
@@ -183,42 +190,32 @@
     &lt;/label&gt;        
     </code></pre>
         </section>
-
-
-
-        <!-- <section id="colors">
+<hr />
+        <section id="colors">
 			<h1>Colors</h1>
 			<div class="color-grid">
 				
-				<div style="background-color: var(--color-background)">--color-background</div>
-				<div style="background-color: var(--color-foreground); color: var(--color-background)">--color-foreground</div>
-				<div style="background-color: var(--color-dark); color: var(--color-background)">--color-dark</div>
-				
-				<div style="background-color: var(--color-light)">--color-light</div>
-				
-				<div style="background-color: var(--color-md-light)">--color-md-light</div>
-				
-				<div style="background-color: var(--color-dark); color: var(--color-background)">--color-md-dark</div>
+				<div style="background-color: var(--color-bg)">--color-background</div>
+
+                <div style="background-color: var(--color-light)">--color-light</div>
+
+				<div style="background-color: var(--color-accent); color: var(--color-background)">--color-accent</div>				
 				
 				<div style="background-color: var(--color-primary); color: var(--color-background)">--color-primary</div>
-				
-				<div style="background-color: var(--color-info); color: var(--color-background)">--color-info</div>
-				
-				<div style="background-color: var(--color-success); color: var(--color-background)">--color-success</div>
-				
-				<div style="background-color: var(--color-danger); color: var(--color-background)">--color-danger</div>
-				
-				<div style="background-color: var(--color-callout)">--color-callout</div>
-				<div style="background-color: var(--color-lightest)">--color-lightest</div>
-			</div>
-		</section> -->
 
+                <div style="background-color: var(--color-secondary); color: var(--color-bg)">--color-secondary</div>
+
+                <div style="background-color: var(--color-dark); color: var(--color-bg)">--color-dark</div>
+
+				<div style="background-color: var(--color-danger); color: var(--color-bg)">--color-danger</div>
+				
+			</div>
+		</section>
+<hr />
         <section id="navbar">
             <h1>Navbar</h1>
-
-            <h2>Navbar 1</h2>
             <p>A navbar with all elements on the left.</p>
-            <p>Use a single child under <code>div.navbar</code>.</p>
+            <p>Use a single child under <code class="inline-code">div.navbar</code>.</p>
 
             <div class="navbar">
                 <ul>
@@ -234,22 +231,33 @@
 
             <div>
                 <pre class="code-block"><code>
-&lt;div class=&quot;navbar&quot;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;h1 class=&quot;title&quot;&gt;TITLE&lt;/h1&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;</code>
-				</pre>
+    &lt;div class=&quot;navbar&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;h1 class=&quot;title&quot;&gt;TITLE&lt;/h1&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/div&gt;</code></pre>
             </div>
+        </section>
+<hr />
+        <section id="tabs">
+            <h1>Tabs</h1>
+            <arche-tabs>
+                <arche-tab role="heading" slot="tab">Tab 1</arche-tab>
+                <arche-panel role="region" slot="panel">Content 1</arche-panel>
+                <arche-tab role="heading" slot="tab">Tab 2</arche-tab>
+                <arche-panel role="region" slot="panel">Content 2</arche-panel>
+                <arche-tab role="heading" slot="tab">Tab 3</arche-tab>
+                <arche-panel role="region" slot="panel">Content 3</arche-panel>
+            </arche-tabs>
         </section>
 
         <section id="footers">
             <h2>Page Footer</h2>
-            <div class="page-footer">
+            <div class="footer">
                 <ul>
                     <li>
                         <h3>Column 1</h3>
@@ -279,7 +287,7 @@
             </div>
         </section>
     </div>
-    <div class="page-footer">
+    <div class="footer">
         <ul>
             <li>
                 <h3>Content</h3>
@@ -303,9 +311,12 @@
             <li>
                 <h3>Contact</h3>
             </li>
-            <li><a href="https://github.com/soggybag/frmwrk-css">GitHub</a></li>
+            <li><a href="https://github.com/aucoeur/archetype">GitHub</a></li>
         </ul>
     </div>
+
+    <!-- Load arche tabs js -->
+    <script src="./tabs/tabs.js"></script>
 </body>
 
 </html>

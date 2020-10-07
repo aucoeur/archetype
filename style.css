@@ -2,15 +2,25 @@
   --sans-serif: "Source Sans Pro", Helvetica, Verdana, sans-serif;
   --caps: "Bebas Neue";
   --monotype: "Ubuntu Mono";
-  --font-size: $font-size;
+  --font-size: 20px;
   --line-height: 1.2em;
   --color-light: rgb(236, 236, 226);
-  --color-bg: rgb(236, 236, 226);
+  --color-bg: rgb(238, 238, 235);
   --color-dark: rgb(35, 51, 49);
-  --color-accent: rgb(139, 214, 41);
-  --color-primary: rgb(0, 192, 192);
+  --color-danger: rgb(255, 0, 0);
+  --color-accent: rgb(90, 185, 0);
+  --color-primary: rgb(185, 236, 1);
   --color-secondary: rgb(65, 83, 88);
-  --padding: $padding;
+  --padding: 0.25em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.danger {
+  color: var(--color-light);
+  background-color: var(--color-danger);
 }
 
 body {
@@ -20,6 +30,10 @@ body {
   background-color: var(--color-bg);
   color: var(--color-secondary);
   margin: 0;
+}
+
+div {
+  padding: 0.25em;
 }
 
 h1,
@@ -66,7 +80,7 @@ h6 {
   background-color: var(--color-dark);
   padding: 0 0.5em;
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
 }
 .navbar .title {
   padding: 0 0.5em 0 0;
@@ -100,7 +114,7 @@ h6 {
 }
 .navbar > ul > li a:active, .navbar ul > li a:active {
   background-color: var(--color-bg);
-  color: var(--color-accent);
+  color: var(--color-primary);
   filter: none;
 }
 .navbar > ul > li > ul, .navbar ul > li > ul {
@@ -128,7 +142,8 @@ h6 {
 
 pre {
   font-family: var(--monotype);
-  color: var(--color-primary);
+  font-size: 15px;
+  color: var(--color-primary) !important;
   background-color: var(--color-secondary);
   padding: 0 0.5em 0.25em;
   margin: 0.5em 2.5em;
@@ -144,17 +159,73 @@ pre {
   border-radius: 10px;
 }
 
-code {
+.inline-code {
   font-family: var(--monotype);
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 p {
   padding: 0 0.625em;
 }
 
-section:not(> .navbar) {
+section > :not(.navbar) {
   padding: 0 0.625em;
+}
+
+/* The switch - the box around the slider */
+.arche-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+}
+
+/* Hide default HTML checkbox */
+.arche-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.arche-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-secondary);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.arche-slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 25px;
+  left: 4px;
+  bottom: 3px;
+  background-color: var(--color-light);
+  border-radius: 25px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .arche-slider {
+  background-color: var(--color-accent);
+}
+
+input:focus + .arche-slider {
+  box-shadow: 0 0 1px var(--color-accent);
+}
+
+input:checked + .arche-slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 /* checkbox button base element */
@@ -173,8 +244,8 @@ section:not(> .navbar) {
   content: "";
   width: 10px;
   height: 20px;
-  border-right: 5px solid var(--color-primary);
-  border-bottom: 5px solid var(--color-primary);
+  border-right: 5px solid var(--color-accent);
+  border-bottom: 5px solid var(--color-accent);
   transform: rotate(45deg);
   position: absolute;
   left: 5px;
@@ -200,8 +271,46 @@ section:not(> .navbar) {
 }
 
 /* Hide the input */
-.arche-checkbox input {
+.arche-checkbox input, .arche-radio input {
   visibility: hidden;
+}
+
+.arche-radio > span {
+  display: inline-block;
+  font-size: 30px;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.arche-radio > input[type=radio] + span::before {
+  display: block;
+  opacity: 0;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  transition: 400ms;
+}
+
+.arche-radio > input[type=radio]:checked + span::before {
+  opacity: 1;
+}
+
+.arche-radio > input[type=radio] + span::after {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 button {
@@ -214,23 +323,105 @@ button {
   background-color: var(--color-secondary);
 }
 
+button.danger {
+  border: 0;
+}
+
 button:hover {
   border: 2px solid var(--color-secondary);
   color: var(--color-primary);
+}
+
+button.danger:hover {
+  border: 0px solid var(--color-secondary);
+  color: var(--color-dark);
 }
 
 div {
   margin: 15px 0;
 }
 
+.inner {
+  margin-left: 0.75em;
+}
+
 a {
-  color: var(--color-primary);
+  color: var(--color-accent);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--color-dark);
+  color: var(--color-primary);
   text-decoration: none;
+}
+
+input {
+  padding: 5px;
+}
+
+form {
+  margin: 15px;
+}
+
+arche-tabs, arche-tab, arche-panel {
+  padding: 15px;
+}
+
+arche-tab {
+  color: var(--color-light);
+  background-color: var(--color-secondary);
+  padding: 10px 25px;
+  border-right: 1px solid var(--color-light);
+  border-radius: 5px 5px 0 0;
+}
+
+arche-tab:focus {
+  background-color: var(--color-dark);
+  outline: none;
+}
+
+arche-panel {
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid var(--color-dark);
+  border-radius: 0 5px 5px 5px;
+}
+
+.color-grid {
+  padding: 0.25em;
+}
+
+ul {
+  list-style: square inside none;
+}
+
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  display: flex;
+}
+.footer > ul {
+  flex: 32%;
+}
+.footer li {
+  list-style: none outside none;
+}
+.footer li > h1, .footer li > h2, .footer li > h3 {
+  color: var(--color-light);
+  padding: 0 !important;
+}
+.footer li > a {
+  display: block;
+  color: var(--color-light);
+  text-decoration: none;
+}
+.footer li a:hover {
+  color: var(--color-primary);
+}
+.footer li a:active {
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+  filter: none;
 }
 
 /*# sourceMappingURL=style.css.map */
