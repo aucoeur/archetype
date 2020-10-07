@@ -96,13 +96,13 @@
     &lt;button class=&quot;danger&quot;&gt;Delete&lt;/button&gt;</code>
 			</pre>
         </section>
-
+<hr />
         <section>
             <h2>Links</h2>
             <p>This <a href="#">paragraph</a> contains a couple <a href="#">links</a> to show off their styles in
                 context.</p>
         </section>
-
+<hr />
         <section>
             <h2>Forms and controls</h2>
             <form>
@@ -239,9 +239,18 @@
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
-    &lt;/div&gt;</code></pre>
+    &lt;/div&gt;
+    </code></pre>
             </div>
         </section>
+<hr />
+    <section id="cards">
+        <h1>Cards</h1>
+        <arche-card>
+            <span slot="card-title">Card title</span>
+            <span slot="card-description">A card description and words and stuff.</span>
+        </arche-card>
+    </section>
 <hr />
         <section id="tabs">
             <h1>Tabs</h1>
@@ -253,8 +262,20 @@
                 <arche-tab role="heading" slot="tab">Tab 3</arche-tab>
                 <arche-panel role="region" slot="panel">Content 3</arche-panel>
             </arche-tabs>
+            <p>Add <code class="inline-code">    &lt;script src="./scripts/tabs.js"&gt;&lt;/script&gt;</code>
+            to bottom of <code>index.html</code></p>
+            <pre><code> 
+    &lt;arche-tabs&gt;
+        &lt;arche-tab role="heading" slot="tab"&gt;Tab 1&lt;/arche-tab&gt;
+        &lt;arche-panel role="region" slot="panel"&gt;Content 1&lt;/arche-panel&gt;
+        &lt;arche-tab role="heading" slot="tab"&gt;Tab 2&lt;/arche-tab&gt;
+        &lt;arche-panel role="region" slot="panel"&gt;Content 2&lt;/arche-panel&gt;
+        &lt;arche-tab role="heading" slot="tab"&gt;Tab 3&lt;/arche-tab&gt;
+        &lt;arche-panel role="region" slot="panel"&gt;Content 3&lt;/arche-panel&gt;
+    &lt;/arche-tabs&gt;
+            </code></pre>
         </section>
-
+<hr/>
         <section id="footers">
             <h2>Page Footer</h2>
             <div class="footer">
@@ -316,7 +337,8 @@
     </div>
 
     <!-- Load arche tabs js -->
-    <script src="./tabs/tabs.js"></script>
+    <script src="./scripts/cards.js"></script>
+    <script src="./scripts/tabs.js"></script>
 </body>
 
 </html>

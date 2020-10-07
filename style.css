@@ -44,7 +44,7 @@ h5,
 h6 {
   color: var(--color-dark);
   font-family: var(--caps);
-  padding: 7.5px;
+  padding: 12.5px;
   font-weight: normal;
   margin: 0.5em 0;
 }
@@ -165,11 +165,12 @@ pre {
 }
 
 p {
-  padding: 0 0.625em;
+  padding: 0 1em;
+  margin: 1em;
 }
 
 section > :not(.navbar) {
-  padding: 0 0.625em;
+  padding: 0 12.5px;
 }
 
 /* The switch - the box around the slider */

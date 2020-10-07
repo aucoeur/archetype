@@ -48,7 +48,7 @@ h6 {
     color: var(--color-dark);
     font-family: var(--caps);
     // letter-spacing: $padding;
-    padding: $padding-fixed * 1.5;
+    padding: $padding-fixed * 2.5;
     font-weight: normal;
     margin: 0.5em 0;
 }
@@ -176,12 +176,13 @@ pre {
 } 
 
 p {
-    padding: 0 $padding * 2.5;
+    padding: 0 $padding * 4;
+    margin: $padding * 4;
 }
 
 section {
     >:not(.navbar) {
-        padding: 0 $padding * 2.5;
+        padding: 0 $padding-fixed * 2.5;
     }
 }
 
